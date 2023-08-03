@@ -1,0 +1,7 @@
+.main{
+    text-align: center;
+}
+.sub{
+    display: flex;
+    justify-content: center;
+}
