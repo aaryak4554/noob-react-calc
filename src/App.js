@@ -9,6 +9,7 @@ function App() {
     const [result, setResult]=useState(" ");
     function handleAdd(){
         setResult(a+b);
+        setCount(count+1);
     }
     function handleReset(){
         setA(" ");
@@ -18,7 +19,7 @@ function App() {
   return (
     <div className="main">
       <p>hiiii thereeeee</p>
-      <p>Total operations: 0</p>
+      <p>Total operations: {count}</p>
       <div className='sub'>
             <input 
                 className='num'
