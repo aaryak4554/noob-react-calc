@@ -8,27 +8,38 @@ function App() {
     const [sign, setSign]=useState("+");
     const [result, setResult]=useState(" ");
 
+    function handleChangeA(e){
+        setA(e.target.value);
+    }
+    function handleChangeB(e){
+        setB(e.target.value);
+    }
     function handleAdd(){
         setSign('+');
         setCount(count+1);
+        setResult(Number(a)+Number(b));
     }
     function handleSubtract(){
         setSign('-');
         setCount(count+1);
+        setResult(Number(a)-Number(b));
     }
     function handleMultiply(){
         setSign('*');
         setCount(count+1);
+        setResult(Number(a)*Number(b));
     }
     function handleDivide(){
         setSign('/');
         setCount(count+1);
+        setResult(Number(a)/Number(b));
     }
 
     function handleReset(){
         setA(" ");
         setB(" ");
         setSign("+");
+        setResult(" ");
     }
 
     return (
@@ -41,6 +52,7 @@ function App() {
                     type='number'
                     placeholder='number 1...'
                     value={a}
+                    onChange={handleChangeA}
                 />
                 <div className='sign'>{sign}</div>
                 <input 
@@ -48,6 +60,7 @@ function App() {
                     type='number'
                     placeholder='number 2...'
                     value={b}
+                    onChange={handleChangeB}
                 />
         </div>
         <div className='ops'>
@@ -56,7 +69,7 @@ function App() {
             <button onClick={handleMultiply}>*</button>
             <button onClick={handleDivide}>/</button>
         </div>
-        <p>Result: {result}</p>
+        <p>Result:{result}</p>
         <button onClick={handleReset}>Reset</button>
         </div>
     );
